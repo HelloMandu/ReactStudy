@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import NewsList from '../components/NewsList';
 import Categories from '../components/Categories';
 
