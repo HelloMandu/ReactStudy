@@ -29,8 +29,7 @@ const TodoList = ({todos, onRemove, onToggle})=>{
             rowRenderer={rowRenderer}
             list={todos}
             style={{outline:'none'}}
-            >
-        </List>
+            />
     );
 }
 
