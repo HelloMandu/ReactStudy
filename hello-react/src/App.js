@@ -4,6 +4,7 @@ import ScrollBox from './ScrollBox';
 import LifeCycleSample from './LifeCycleSample';
 import IterationSample from './IterationSample';
 import Counter from './Counter';
+import Toggle from './Toggle';
 // import './App.css';
 
 class App extends Component {
@@ -30,7 +31,8 @@ class App extends Component {
         </button> */}
         {/* <LifeCycleSample/> */}
         {/* <IterationSample></IterationSample> */}
-        <Counter/>
+        {/* <Counter/> */}
+        <Toggle></Toggle>
       </div>
     );
   };

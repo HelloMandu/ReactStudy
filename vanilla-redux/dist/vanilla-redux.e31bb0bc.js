@@ -870,50 +870,47 @@ var divToggle = document.querySelector('.toggle');
 var counter = document.querySelector('h1');
 var btnIncrease = document.querySelector('#increase');
 var btnDecrease = document.querySelector('#decrease');
-var TOGGLE_SWITCH = 'TOGGLE_SWITCH';
-var INCREASE = 'INCREASE';
-var DECREASE = 'DECREASE';
 
 var toggleSwitch = function toggleSwitch() {
   return {
-    type: TOGGLE_SWITCH
+    type: 'TOGGLE_SWITCH'
   };
 };
 
 var increase = function increase(difference) {
   return {
-    type: INCREASE,
+    type: 'INCREASE',
     difference: difference
   };
 };
 
 var decrease = function decrease() {
   return {
-    type: DECREASE
+    type: 'DECREASE'
   };
 };
 
-var initalState = {
+var initialState = {
   toggle: false,
   counter: 0
 };
 
 function reducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initalState;
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case TOGGLE_SWITCH:
+    case 'TOGGLE_SWITCH':
       return _objectSpread(_objectSpread({}, state), {}, {
         toggle: !state.toggle
       });
 
-    case INCREASE:
+    case 'INCREASE':
       return _objectSpread(_objectSpread({}, state), {}, {
         counter: state.counter + action.difference
       });
 
-    case DECREASE:
+    case 'DECREASE':
       return _objectSpread(_objectSpread({}, state), {}, {
         counter: state.counter - 1
       });
@@ -937,8 +934,8 @@ var render = function render() {
   counter.innerText = state.counter;
 };
 
-render();
 store.subscribe(render);
+render();
 
 var listener = function listener() {
   console.log("update");
@@ -986,7 +983,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63173" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64880" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

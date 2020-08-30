@@ -1,0 +1,21 @@
+.RadioBoxItem{
+    position: relative;
+    border: 2px solid #007246;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.radioClicked{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #007246;
+    box-shadow:rgba(0, 0, 0, 0.16) 0px 3px 3px;
+}

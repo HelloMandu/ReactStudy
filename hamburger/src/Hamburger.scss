@@ -1,0 +1,33 @@
+.off {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.on {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+@for $i from 1 to 4 {
+    .bar#{$i} {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+  }
+
+.on .bar1{
+    transform: rotate(45deg)  translate(8px, 8px);
+}
+
+.on .bar2{
+    opacity: 0;
+}
+
+.on .bar3{
+    transform: rotate(-45deg) translate(8px, -8px);
+}
