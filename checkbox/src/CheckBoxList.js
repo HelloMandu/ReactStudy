@@ -4,8 +4,8 @@ import CheckBoxItem from './CheckBoxItem';
 const CheckBoxList = ({checkBoxList, onToggle}) => {
     return (
         <div className="checkBoxList">
-            {checkBoxList.map(checkBoxItem => (
-                <CheckBoxItem checkBoxItem={checkBoxItem} key={checkBoxItem.id} onToggle={onToggle} />
+            {checkBoxList.map(({ id, checked }) => (
+                <CheckBoxItem  key={id} checked={checked} onToggle={() => onToggle(id)} />
             ))}
         </div>
     );

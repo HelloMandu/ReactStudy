@@ -1,8 +1,6 @@
-import React, { useState, useCallback } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useCallback, useEffect } from 'react';
 import CheckBoxList from './CheckBoxList'
-import AllCheck from './AllCheck';
+import CheckBoxItem from './CheckBoxItem';
 
 function App() {
   const [allChecked, setAllChecked] = useState(false);
@@ -20,37 +18,52 @@ function App() {
       checked: true,
     },
   ]);
+  // const onToggleAll = useCallback(() => {
+  //   let newCheckBoxList = null;
+  //   if(allChecked){
+  //     newCheckBoxList = checkBoxList.map(checkBox => ({...checkBox, checked: false}));
+  //   }
+  //   else{
+  //     newCheckBoxList = checkBoxList.map(checkBox => ({...checkBox, checked: true}));
+  //   }
+  //   setAllChecked(!allChecked);
+  //   setCheckBoxList(newCheckBoxList);
+  // }, [allChecked]);
+
+  // const onToggle = useCallback(id => {
+  //   const newCheckBoxList = checkBoxList.map(checkBox => checkBox.id === id ? { ...checkBox, checked: !checkBox.checked } : checkBox);
+  //   let cnt = 0;
+  //   newCheckBoxList.forEach(checkBox=>{
+  //     if(checkBox.checked){
+  //       cnt++;
+  //     }
+  //   })
+  //   if(cnt === newCheckBoxList.length){
+  //     setAllChecked(true);
+  //   }
+  //   else{
+  //     setAllChecked(false);
+  //   }
+  //   setCheckBoxList(newCheckBoxList);
+  // }, [checkBoxList]);
+  
+  useEffect(() => {
+    const result = checkBoxList.reduce((prev, cur) => prev && cur.checked, true);
+    setAllChecked(result);
+  }, [checkBoxList]);
+
   const onToggleAll = useCallback(() => {
-    let newCheckBoxList = null;
-    if(allChecked){
-      newCheckBoxList = checkBoxList.map(checkBox => ({...checkBox, checked: false}));
-    }
-    else{
-      newCheckBoxList = checkBoxList.map(checkBox => ({...checkBox, checked: true}));
-    }
-    setAllChecked(!allChecked);
-    setCheckBoxList(newCheckBoxList);
-  }, [allChecked, checkBoxList]);
+    setCheckBoxList(checkBoxList.map(checkBox => ({ ...checkBox, checked: !allChecked })));
+  }, [allChecked]);
 
   const onToggle = useCallback(id => {
-    const newCheckBoxList = checkBoxList.map(checkBox => checkBox.id === id ? { ...checkBox, checked: !checkBox.checked } : checkBox);
-    let cnt = 0;
-    newCheckBoxList.forEach(checkBox=>{
-      if(checkBox.checked){
-        cnt++;
-      }
-    })
-    if(cnt === newCheckBoxList.length){
-      setAllChecked(true);
-    }
-    else{
-      setAllChecked(false);
-    }
-    setCheckBoxList(newCheckBoxList);
+    setCheckBoxList(checkBoxList.map(checkBox => checkBox.id === id ? { ...checkBox, checked: !checkBox.checked } : checkBox));
   }, [checkBoxList]);
+
   return (
     <div>
-      <AllCheck checked={allChecked} onToggleAll={onToggleAll}></AllCheck>
+      <CheckBoxItem checked={allChecked} onToggle={onToggleAll}></CheckBoxItem>
+      <hr/>
       <CheckBoxList checkBoxList={checkBoxList} onToggle={onToggle}></CheckBoxList>
     </div>
   );
