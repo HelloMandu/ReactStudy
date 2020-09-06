@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // color: #222222;
+  font-family: "Apple SD Gothic Neo";
+}
+.SignUp {
+  width: 420px;
+  margin: 0 auto;
+  input {
+    width: 100%;
+    height: 64px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 20px;
+    transition: all 0.4s ease-in-out;
+  }
+  button {
+    border: 1px solid #ebebeb;
+    width: 100%;
+    height: 64px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .Introduce {
+    margin-bottom: 20px;
+  }
+  .Title {
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 117px;
+    margin-bottom: 56px;
+    div {
+      position: relative;
+      display: inline-block;
+      padding-left: 11px;
+      bottom: 11px;
+      color: #325048;
+    }
+  }
+  .Complete {
+    border: none;
+    background-color: #999999;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-top: 60px;
+    margin-bottom: 202px;
+  }
+  .SignUpList {
+    width: 100%;
+    margin-bottom: 30px;
+
+    .On {
+      background-color: #007240;
+      color: white;
+    }
+    .phoneCheck {
+      position: relative;
+      button {
+        position: absolute;
+        top: 0%;
+        left: 292px;
+        margin-top: 8px;
+        width: 120px;
+        height: 48px;
+        font-size: 16px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .send {
+        background-color: #007240;
+        color: white;
+      }
+      .Timer {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-75%);
+        left: 238px;
+      }
+      .Confirm {
+        &:hover {
+          background-color: #007240;
+          color: white;
+        }
+      }
+    }
+    .Finish {
+      animation: hiddenTransition .3s ease-in-out;
+      animation-fill-mode: forwards;
+    }
+    .confirmPassword {
+      transition: all 0.3s ease-in-out;
+    }
+    .CheckBox {
+      position: relative;
+      width: 100%;
+      height: 64px;
+      padding: 20px;
+      .explain {
+        position: absolute;
+        margin-left: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .All {
+      background-color: #f9f9f9;
+      font-weight: bold;
+    }
+    .CheckBoxItem {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      margin: 3px;
+      background-color: #dbdbdb;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.15s ease-in-out;
+      &:hover {
+        border-color: #007420;
+      }
+    }
+    svg {
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 60%;
+    }
+  }
+}
+.Modal {
+  margin: 1px;
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #dbdbdb;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  background-color: white;
+  z-index: 1;
+  .Title {
+    position: relative;
+    top: 96px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .Description {
+    position: relative;
+    top: 164px;
+    font-size: 16px;
+  }
+  .Type {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 64px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 64px;
+    &:hover {
+      cursor: pointer;
+    }
+    .Alert {
+      background-color: #007240;
+      color: white;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+    }
+    .Confirm {
+      margin: 1px;
+      display: table;
+      width: 100%;
+      .No {
+        display: table-cell;
+        background-color: white;
+        border-bottom-left-radius: 14px;
+      }
+      .Yes {
+        display: table-cell;
+        background-color: #007240;
+        border-bottom-right-radius: 14px;
+      }
+    }
+  }
+}
+
+@keyframes hiddenTransition {
+  0% {
+    opacity: 1;
+    transform: none;
+    display: block;
+  }
+  99% {
+    opacity: 0;
+    transform: translateX(20%);
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(20%);
+    visibility: hidden;
+  }  
+}
