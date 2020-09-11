@@ -2,9 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // color: #222222;
   font-family: "Apple SD Gothic Neo";
 }
+
 .SignUp {
   width: 420px;
   margin: 0 auto;
@@ -93,7 +93,7 @@
       }
     }
     .Finish {
-      animation: hiddenTransition .3s ease-in-out;
+      animation: hiddenTransition 0.3s ease-in-out;
       animation-fill-mode: forwards;
     }
     .confirmPassword {
@@ -141,29 +141,26 @@
     }
   }
 }
+
 .Modal {
-  margin: 1px;
   position: fixed;
   width: 360px;
   height: 360px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid #dbdbdb;
-  border-radius: 15px;
-  transition: all 0.3s ease-in-out;
+  border-radius: 14px;
   text-align: center;
   background-color: white;
-  z-index: 1;
+  transition: all .3s ease-in-out;
+  z-index: 3000;
   .Title {
     position: relative;
-    top: 96px;
     font-size: 22px;
     font-weight: bold;
   }
   .Description {
     position: relative;
-    top: 164px;
     font-size: 16px;
   }
   .Type {
@@ -173,29 +170,27 @@
     height: 64px;
     font-weight: bold;
     font-size: 18px;
-    line-height: 64px;
     &:hover {
       cursor: pointer;
     }
     .Alert {
       background-color: #007240;
       color: white;
-      border-bottom-left-radius: 14px;
-      border-bottom-right-radius: 14px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
     .Confirm {
-      margin: 1px;
       display: table;
       width: 100%;
       .No {
         display: table-cell;
         background-color: white;
-        border-bottom-left-radius: 14px;
+        border-bottom-left-radius: 10px;
       }
       .Yes {
         display: table-cell;
         background-color: #007240;
-        border-bottom-right-radius: 14px;
+        border-bottom-right-radius: 10px;
       }
     }
   }
@@ -217,5 +212,5 @@
     opacity: 0;
     transform: translateX(20%);
     visibility: hidden;
-  }  
+  }
 }

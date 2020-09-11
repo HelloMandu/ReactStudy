@@ -36,7 +36,7 @@ const CheckBox = () => {
     setCheckBoxList(
       checkBoxList.map((checkBox) => ({ ...checkBox, checked: !allChecked }))
     );
-  }, [allChecked]);
+  }, [allChecked, checkBoxList]);
 
   const onToggle = useCallback(
     (id) => {
@@ -55,6 +55,7 @@ const CheckBox = () => {
     <div className="SignUpList">
       <div className="CheckBox All">
         <CheckBoxItem
+          id={0}
           checked={allChecked}
           onToggle={onToggleAll}
         ></CheckBoxItem>

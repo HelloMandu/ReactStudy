@@ -934,8 +934,8 @@ var render = function render() {
   counter.innerText = state.counter;
 };
 
-store.subscribe(render);
 render();
+store.subscribe(render);
 
 var listener = function listener() {
   console.log("update");
@@ -983,7 +983,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64880" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51950" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

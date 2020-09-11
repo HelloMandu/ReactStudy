@@ -5,9 +5,8 @@ const CheckBoxList = ({ checkBoxList, onToggle }) => {
   return (
     <div className="CheckBoxList">
       {checkBoxList.map(({ id, checked, explain }) => (
-        <div className="CheckBox">
+        <div className="CheckBox" key={id}>
           <CheckBoxItem
-            key={id}
             checked={checked}
             onToggle={() => onToggle(id)}
           ></CheckBoxItem>

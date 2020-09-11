@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
+import { ButtonBase } from "@material-ui/core";
 
 const Email = ({ value, onChange }) => {
   const [isOn, setIsOn] = useState(false);
   useMemo(()=>{
-  const emailRegExp = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+  const emailRegExp = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
     if(value.email.match(emailRegExp)){
       setIsOn(true);
     }
@@ -21,7 +22,7 @@ const Email = ({ value, onChange }) => {
         value={value.email}
         onChange={onChange}
       ></input>
-      <button className={isOn ? "On" : ""}>중복검사</button>
+      <ButtonBase className={isOn ? "On" : ""}>중복검사</ButtonBase>
     </div>
   );
 };

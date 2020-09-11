@@ -49,8 +49,8 @@ const render = () =>{
     counter.innerText = state.counter;
 }
 
-store.subscribe(render);
 render();
+store.subscribe(render);
 
 const listener = () =>{
     console.log("update");

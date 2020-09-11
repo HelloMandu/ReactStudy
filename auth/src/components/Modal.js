@@ -1,21 +1,30 @@
 import React from "react";
+import { Backdrop, ButtonBase } from "@material-ui/core";
 
-const Modal = ({ modal }) => {
-  const { title, description, type } = modal;
+const Modal = ({ title, description, type, onModal, setOnModal }) => {
   return (
-    <div className="Modal">
-      <div className="Title">{title}</div>
-      <div className="Description">{description}</div>
-      <div className="Type">
-        {type ? (
-          <div className="Confirm">
-            <div className="No">취소</div>
-            <div className="Yes">확인</div>
-          </div>
-        ) : (
-          <div className="Alert">확인</div>
-        )}
-      </div>
+    <div>
+      {onModal && <div className="Modal">
+        <div className="Title">{title}</div>
+        <div className="Description">{description}</div>
+        <div className="Type">
+          {type ? (
+            <div className="Confirm">
+              <ButtonBase className="No">취소</ButtonBase>
+              <ButtonBase className="Yes">확인</ButtonBase>
+            </div>
+          ) : (
+            <ButtonBase className="Alert" onClick={() => setOnModal(!onModal)}>
+              확인
+            </ButtonBase>
+          )}
+        </div>
+      </div>}
+      <Backdrop
+        open={onModal}
+        onClick={() => setOnModal(!onModal)}
+        style={{ zIndex: 1500 }}
+      />
     </div>
   );
 };

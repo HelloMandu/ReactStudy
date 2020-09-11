@@ -1,4 +1,4 @@
-import {useReducer} from 'react';
+import {useReducer, useCallback} from 'react';
 
 function reducer(state, action){
     return{
@@ -9,8 +9,8 @@ function reducer(state, action){
 
 export default function useInput(initialForm){
     const [state, dispatch] = useReducer(reducer, initialForm);
-    const onChange = e =>{
+    const onChange = useCallback(e =>{
         dispatch(e.target);
-    }
+    }, []);
     return [state, onChange];
 }

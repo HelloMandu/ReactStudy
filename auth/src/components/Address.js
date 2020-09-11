@@ -1,4 +1,5 @@
 import React from "react";
+import { ButtonBase } from "@material-ui/core";
 
 const Address = ({ value, onChange }) => {
   const { store, detail } = value;
@@ -11,7 +12,7 @@ const Address = ({ value, onChange }) => {
         value={store}
         onChange={onChange}
       ></input>
-      <button>주소찾기</button>
+      <ButtonBase>주소찾기</ButtonBase>
       <input
         type="text"
         name={"detail"}
