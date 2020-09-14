@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Apple SD Gothic Neo';
+}
+
+.Notice {
+    & + & {
+        border-top: 1px solid #ebebeb;
+    }
+}
+.NoticePage {
+    width: 100%;
+    .NoticeTitle {
+        height: 40px;
+        margin: 13px;
+        margin-left: 15px;
+        .Title {
+            position: relative;
+            display: inline-block;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .AllConfirm {
+            position: relative;
+            float: right;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+        }
+    }
+    .NoticeList {
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
+        .Notice {
+            width: 100%;
+            height: 96px;
+            padding: 24px;
+            text-align: left;
+            justify-content: unset;
+            display: block;
+            .Text {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            .Time {
+                font-size: 12px;
+                color: #999999;
+            }
+        }
+        .Confirm {
+            color: #aaaaaa;
+            background-color: #f9f9f9;
+        }
+    }
+}
