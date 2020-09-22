@@ -6,7 +6,7 @@
 ## Hook의 종류
 
 | Name | Param | Returns | Description |
-|---|---|---|---|
+|:---:|:---:|:---:|:---:|
 | `useState` | initialState | - | 가장 기본적인 Hook으로 함수형 컴포넌트에서도 state를 사용할 수 있게 함 |
 | `useEffect` | function, [state] | cleanup**언마운트전이나 업데이트 직전에 작업을 원할시** | 컴포넌트가 렌더링될 때마다 특정 작업을 수행하도록 설정, componentDidMount + componentDidUpdate |
 | `useReducer` | function, initialState | - | 현재상태, 업데이트를 위해 필요한 정보를 담은 action값을 전달 받아 새로운 상태를 반환하는 함수 **새로운 상태를 만들 시 불변성 유지할 것** |
