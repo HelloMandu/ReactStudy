@@ -106,3 +106,5 @@ export default IterationSample;
 - componentDidUpdate: 리렌더링을 완료한 후 실행
 - componentWillUnMount: 컴포넌트를 DOM에서 제거할 때 실행
 - componentDidCatch: 렌더링 도중 에러가 발생했을 때 먹통이 되지 않고 UI를 보여 줄 수 있게 해줌
+
+![image](https://user-images.githubusercontent.com/45222982/93907999-0c53c080-fd39-11ea-8bcf-ecb9cf8ed194.png)
