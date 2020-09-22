@@ -75,7 +75,7 @@ const IterationSample = () =>{
 
 export default IterationSample;
 ```
-## LifeCycle Method
+## LifeCycle
 라이프사이클은 총 세가지
  - 마운트
  - 업데이트
