@@ -9,6 +9,7 @@
  - useEffect에 등록하는 함수는 async로 작성하면 안댐, **대신 async 함수를 따로 만들어서 사용할 것**
  
 ## 커스텀 Hook
+
 ```
 import { useState, useEffect } from "react";
 
@@ -32,3 +33,9 @@ export default function usePromise(promiseCreator, deps) {
   return [loading, resolved, error];
 }
 ```
+```
+  const [loading, response, error] = usePromise(()=>{
+    const query = (category === 'all' ? '' : `&category=${category}`);
+    return axios.get(`http://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=dabeec94a62a4c2688397e5a0f0f56dc`);
+  }, [category])
+  ```
