@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Router
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## SPA란?
+ Single Page Application의 약어로 한 개의 페이지로 이루어진 애플리케이션
+ - 서버 측에서 모든 뷰를 준비한다면 성능상의 문제가 발생할 수 있기 때문에 필요한 부분만 자바스크립트를 사용해 업데이트
+ 
+### problem
+  앱의 규모가 커지면 자바스크립트 파일이 너무 커질 수 있음
+  - **코드 스플리팅**을 사용해 라우트 별로 파일을 나누어 관리
+  - 브라우저에서 자바스크립트를 사용하면 일반 크롤러에서 페이지의 정보를 제대로 수집해 가지 못할 수 있기 때문에 **서버 사이드 렌더링**을 통해 해결할 수 있다
+  
+## URL 파라미터와 쿼리
+ - 파라미터 예시: /profile/velopert
+ - 쿼리 예시: /about/?details=true
+  
+ 
+ ### withRouter
+ - match, location, history 객체를 접근할 수 있게 해줌
+ - withRouter를 사용할 때는 컴포넌트를 내보내 줄 때 함수로 감싸 줌
+ 
+ ### Swith
+  - Route를 감싸서 그 중 일치하는 단 하나의 라우트만을 렌더링 시켜줌
+  
+  ### NavLink
+   - 현재 경로와 Link에서 사용하는 경로가 일치하는 경우 특정 스타일을 적용할 수 있음
+   
+   *코드 스플리팅을 통해 라우트에 따라 필요한 컴포넌트만 불러오도록 하자*
