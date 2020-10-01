@@ -8,9 +8,7 @@ export const TimeFormat = (prensent) => {
         let year = last.getFullYear();
         let month = last.getMonth() + 1;
         let date = last.getDate();
-        return `${year}/${month / 10 ? month : '0' + month}/${
-            date / 10 ? date : '0' + date
-        }`;
+        return `${year}/${month}/${date}`;
     } else if (diff >= 1000 * 60 * 60) {
         return `${Math.floor(diff / (1000 * 60 * 60))}시간전`;
     } else if (diff >= 1000 * 60) {
