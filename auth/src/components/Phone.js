@@ -1,19 +1,8 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
-import Modal from "./Modal";
+import { useDispatch } from "react-redux";
+import useInterval from '../hooks/UseInterval'
+import {onModal} from '../modules/modal';
 import { ButtonBase } from "@material-ui/core";
-
-function useInterval(callback, delay) {
-  const savedCallback = useRef();
-  useEffect(() => {
-    savedCallback.current = callback;
-  });
-  useEffect(() => {
-    if (delay !== 0) {
-      const interval = setInterval(() => savedCallback.current(), delay);
-      return () => clearInterval(interval);
-    }
-  }, [delay]);
-}
 
 function getTime(timer) {
   return (
@@ -30,8 +19,9 @@ const Phone = ({ value, onChange }) => {
   const [isSend, setIsSend] = useState(false);
   const [confirm, setConfirm] = useState(false);
   const [timer, setTimer] = useState(0);
-  const [onModal, setOnModal] = useState(false);
   const buttonRef = useRef(null);
+
+  const dispatch = useDispatch();
 
   useMemo(() => {
     const phoneNumberRegExp = /^\d{3}-\d{3,4}-\d{4}$/;
@@ -48,11 +38,11 @@ const Phone = ({ value, onChange }) => {
     }
   }, [canSend])
 
-  useMemo(() => {
+  useEffect(() => {
     if (isSend && !timer && !confirm) {
-      setOnModal(true);
+      dispatch(onModal({title: '시간초과', description: '초과다잉', type: false}));
     }
-  }, [timer, isSend, confirm]);
+  }, [timer, isSend, confirm, dispatch]);
 
   useInterval(
     () => {
@@ -107,14 +97,6 @@ const Phone = ({ value, onChange }) => {
         </ButtonBase>
         {timer !== 0 && <div className="Timer">{getTime(timer)}</div>}
       </div>
-      <Modal
-        title={"인증시간만료"}
-        description={"다시해라"}
-        type={false}
-        onModal={onModal}
-        setOnModal={setOnModal}
-      ></Modal>
-
     </div>
   );
 };

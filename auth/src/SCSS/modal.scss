@@ -1,0 +1,53 @@
+.Modal {
+    position: fixed;
+    width: 360px;
+    height: 360px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 14px;
+    text-align: center;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    z-index: 3000;
+    .Title {
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .Description {
+        font-size: 16px;
+    }
+    .Type {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        height: 64px;
+        font-weight: bold;
+        font-size: 18px;
+        &:hover {
+            cursor: pointer;
+        }
+        .Alert {
+            background-color: #007240;
+            color: white;
+            width: 100%;
+            height: 64px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .Confirm {
+            display: table;
+            width: 100%;
+            .No {
+                display: table-cell;
+                background-color: white;
+                border-bottom-left-radius: 10px;
+            }
+            .Yes {
+                display: table-cell;
+                background-color: #007240;
+                border-bottom-right-radius: 10px;
+            }
+        }
+    }
+}

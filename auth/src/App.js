@@ -1,5 +1,5 @@
 import React from "react";
-import useInput from "./modules/UseInput";
+import useInput from "./hooks/UseInput";
 import Store from "./components/Store";
 import Email from "./components/Email";
 import Password from "./components/Password";
@@ -7,8 +7,10 @@ import Phone from "./components/Phone";
 import Address from "./components/Address";
 import CheckBox from "./components/CheckBox";
 import MainIcon from "./images/MainIcon.png";
-import "./SCSS/auth.scss";
+import ModalContainer from './containers/ModalContainer';
 import { ButtonBase } from "@material-ui/core";
+import "./SCSS/auth.scss";
+
 
 const App = () => {
   const [store, onChangeStore] = useInput({
@@ -45,6 +47,7 @@ const App = () => {
         <CheckBox></CheckBox>
         <ButtonBase className="Complete">가입완료</ButtonBase>
       </div>
+      <ModalContainer></ModalContainer>
     </div>
   );
 };
