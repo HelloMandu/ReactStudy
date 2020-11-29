@@ -1,9 +1,10 @@
 import React from 'react';
-import './Blue.scss';
+import './Blue.css';
 
 const Blue = () =>{
-    return(
-        <div className="Blue">Blue</div>
+    return (
+        <div className="Blue"></div>
     )
 }
+
 export default Blue;
